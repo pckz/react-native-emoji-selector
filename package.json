@@ -1,7 +1,7 @@
 {
-  "name": "react-native-emoji-selector",
-  "version": "0.2.0",
-  "description": "A react native emoji selector",
+  "name": "@emmanuel-d/react-native-emoji-selector",
+  "version": "1.0.0",
+  "description": "A fully customizable React-Native Emoji Selector",
   "main": "index.js",
   "types": "./index.d.ts",
   "scripts": {
@@ -9,15 +9,20 @@
   },
   "keywords": [
     "emoji",
-    "react"
+    "react-native",
+    "react",
+    "react-native-emoji",
+    "react-native-emoji-picker",
+    "react-native-emoji-selector"
   ],
-  "author": "Arron Hunt",
+  "author": "Emmanuel Dadem",
   "license": "MIT",
   "dependencies": {
-    "emoji-datasource": "^6.0.0"
+    "@react-native-async-storage/async-storage": "^1.15.17",
+    "emoji-datasource": "^6.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arronhunt/react-native-emoji-selector.git"
+    "url": "git+https://github.com/emmanuel-D/react-native-emoji-selector.git"
   }
 }
