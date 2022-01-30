@@ -34,7 +34,7 @@ export const Categories = {
     name: "Animals & Nature"
   },
   food: {
-    symbol: "🍗",
+    symbol: "🍚",
     name: "Food & Drink"
   },
   activities: {
@@ -42,7 +42,7 @@ export const Categories = {
     name: "Activities"
   },
   places: {
-    symbol: "🚗️",
+    symbol: "🚘",
     name: "Travel & Places"
   },
   objects: {
@@ -84,7 +84,7 @@ const TabBar = ({ theme, activeCategory, showHistory, onPress, width, categoryBu
             flex: 1,
             height: tabSize,
             borderColor: category === activeCategory ? theme : "#EEEEEE",
-            borderBottomWidth: 2,
+            borderBottomWidth: 3,
             alignItems: "center",
             justifyContent: "center",
             ...categoryButtonStyle
@@ -94,6 +94,7 @@ const TabBar = ({ theme, activeCategory, showHistory, onPress, width, categoryBu
             style={{
               textAlign: "center",
               paddingBottom: 8,
+              paddingTop: 3,
               fontSize: tabSize - 20,
               ...categoryTextStyle
             }}
@@ -304,7 +305,6 @@ export default class EmojiSelector extends Component {
           clearButtonMode="always"
           returnKeyType="done"
           autoCorrect={false}
-          underlineColorAndroid={theme}
           value={searchQuery}
           onChangeText={this.handleSearch}
         />
