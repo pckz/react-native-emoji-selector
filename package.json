@@ -1,5 +1,5 @@
 {
-  "name": "@emmanuel-d/react-native-emoji-selector",
+  "name": "@manu_omg/react-native-emoji-selector",
   "version": "1.0.0",
   "description": "A fully customizable React-Native Emoji Selector",
   "main": "index.js",
@@ -24,5 +24,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emmanuel-D/react-native-emoji-selector.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/emmanuel-D/react-native-emoji-selector/issues"
+  },
+  "homepage": "https://github.com/emmanuel-D/react-native-emoji-selector#readme",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {}
 }
