@@ -36,7 +36,7 @@ declare module "react-native-emoji-selector" {
     shouldInclude?: (e: any) => boolean;
 
     searchbarStyle?: StyleProp<TextStyle> | undefined;
-    searchbarContainerStyle?: StyleProp<TextStyle> | undefined;
+    searchbarContainerStyle?: StyleProp<ViewStyle> | undefined;
     placeholderTextColor?: string;
     categoryButtonStyle?: StyleProp<ViewStyle> | undefined;
     categoryTextStyle?: StyleProp<TextStyle> | undefined;

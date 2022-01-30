@@ -2,14 +2,16 @@
 
 ![Image preview](./assets/cover.png)
 
+A fully customizable Emoji-Selector 🤩 for React Native ⚛️ forked from [react-native-emoji-selector](https://github.com/arronhunt/react-native-emoji-selector) to resolved some issues (recently used emojis, styling, ...) and allow more customization 👋
+
 ## Installation
 
 ```
-npm install --save react-native-emoji-selector
+npm install --save @emmanuel-d/react-native-emoji-selector
 ```
 
 ```
-import EmojiSelector from 'react-native-emoji-selector'
+import EmojiSelector from '@emmanuel-d/react-native-emoji-selector'
 ```
 
 ## Demo
@@ -21,23 +23,25 @@ import EmojiSelector from 'react-native-emoji-selector'
 ### Basic usage
 
 ```jsx
-<EmojiSelector onEmojiSelected={emoji => console.log(emoji)} />
+<EmojiSelector onEmojiSelected={emoji => console.log(emoji)}/>
 ```
 
 ### Setting a default category
 
-If you'd like to define a different default category, you can import the `Categories` class. Setting a default category can also improve performance by loading a single section rather than all sections at once.
+If you'd like to define a different default category, you can import the `Categories` class. Setting a default category
+can also improve performance by loading a single section rather than all sections at once.
 
 ```jsx
-import EmojiSelector, { Categories } from "react-native-emoji-selector";
+import EmojiSelector, {Categories} from "react-native-emoji-selector";
 
 <EmojiSelector
-  category={Categories.symbols}
-  onEmojiSelected={emoji => console.log(emoji)}
+    category={Categories.symbols}
+    onEmojiSelected={emoji => console.log(emoji)}
 />;
 ```
 
-The available categories are `all`, `emotion`, `people`, `nature`, `food`, `activities`, `places`, `objects`, `symbols`, and `flags`.
+The available categories are `all`, `emotion`, `people`, `nature`, `food`, `activities`, `places`, `objects`, `symbols`,
+and `flags`.
 
 ## Props
 
@@ -49,15 +53,20 @@ The available categories are `all`, `emotion`, `people`, `nature`, `food`, `acti
 | showSearchBar     | _bool_   | `true`        | Toggle the searchbar on or off                           |
 | showHistory       | _bool_   | `false`       | Toggle the history tab on or off                         |
 | showSectionTitles | _bool_   | `true`        | Toggle the section title elements                        |
-| category          | _enum_   | `"all"`       | Set the default category. Use the `Categories` class     |
+| category          | _enum_   | `emotion`       | Set the default category. Use the `Categories` class     |
 | columns           | _number_ | `6`           | Number of columns accross                                |
 | placeholder       | _string_ | `"Search..."` | A string placeholder when there is no text in text input |
 | shouldInclude     | _func_   |               | Function called to check for emoji inclusion             |
+| searchbarStyle    | StyleProp\<TextStyle>   |               | Styles for SearchBar             |
+| searchbarContainerStyle     | _StyleProp\<ViewStyle>_   |               | Styles for SearchBar Container             |
+| placeholderTextColor     | _string_   |               |  Text color for SearchBar placeholder             |
+categoryButtonStyle  | _StyleProp\<ViewStyle>_ | | Styles for each Emoji-Category Button
+| categoryTextStyle     |  _StyleProp\<TextStyle>_ |               | Styles for Emoji-Category Text             |
 
 ## Contributors
 
 Special thanks to everyone who has contributed to this project!
-
+[![Emmanuel Dadem](https://avatars.githubusercontent.com/u/37305687?s=80&v=4)](https://github.com/emmanuel-D)
 [![Victor K Varghese](https://avatars3.githubusercontent.com/u/15869386?s=80&v=4)](https://github.com/victorkvarghese)
 [![Kubo](https://avatars3.githubusercontent.com/u/22464192?s=80&v=4)](https://github.com/ma96o)
 [![Mateo Silguero](https://avatars3.githubusercontent.com/u/25598400?s=80&v=4)](https://github.com/mateosilguero)
