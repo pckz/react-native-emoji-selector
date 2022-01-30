@@ -1,6 +1,6 @@
 {
   "name": "@manu_omg/react-native-emoji-selector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A fully customizable React-Native Emoji Selector",
   "main": "index.js",
   "types": "./index.d.ts",
