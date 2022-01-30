@@ -7,9 +7,9 @@ import {
   TextInput,
   Platform,
   ActivityIndicator,
-  AsyncStorage,
   FlatList
 } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import emoji from "emoji-datasource";
 
 export const Categories = {
@@ -26,23 +26,23 @@ export const Categories = {
     name: "Smileys & Emotion"
   },
   people: {
-    symbol: "🧑",
+    symbol: "🙋",
     name: "People & Body"
   },
   nature: {
-    symbol: "🦄",
+    symbol: "🐕",
     name: "Animals & Nature"
   },
   food: {
-    symbol: "🍔",
+    symbol: "🍗",
     name: "Food & Drink"
   },
   activities: {
-    symbol: "⚾️",
+    symbol: "⚽️️",
     name: "Activities"
   },
   places: {
-    symbol: "✈️",
+    symbol: "🚗️",
     name: "Travel & Places"
   },
   objects: {
@@ -54,7 +54,7 @@ export const Categories = {
     name: "Symbols"
   },
   flags: {
-    symbol: "🏳️‍🌈",
+    symbol: "🚩",
     name: "Flags"
   }
 };
@@ -68,10 +68,12 @@ const emojiByCategory = category =>
 const sortEmoji = list => list.sort((a, b) => a.sort_order - b.sort_order);
 const categoryKeys = Object.keys(Categories);
 
-const TabBar = ({ theme, activeCategory, onPress, width }) => {
+const TabBar = ({ theme, activeCategory, showHistory, onPress, width, categoryButtonStyle, categoryTextStyle }) => {
   const tabSize = width / categoryKeys.length;
 
   return categoryKeys.map(c => {
+    if ((c === "history" && !showHistory) || c === "all") return null;
+
     const category = Categories[c];
     if (c !== "all")
       return (
@@ -84,14 +86,16 @@ const TabBar = ({ theme, activeCategory, onPress, width }) => {
             borderColor: category === activeCategory ? theme : "#EEEEEE",
             borderBottomWidth: 2,
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            ...categoryButtonStyle
           }}
         >
           <Text
             style={{
               textAlign: "center",
               paddingBottom: 8,
-              fontSize: tabSize - 24
+              fontSize: tabSize - 20,
+              ...categoryTextStyle
             }}
           >
             {category.symbol}
@@ -122,7 +126,7 @@ const storage_key = "@react-native-emoji-selector:HISTORY";
 export default class EmojiSelector extends Component {
   state = {
     searchQuery: "",
-    category: Categories.people,
+    category: Categories.emotion,
     isReady: false,
     history: [],
     emojiList: null,
@@ -282,6 +286,11 @@ export default class EmojiSelector extends Component {
       showSearchBar,
       showSectionTitles,
       showTabs,
+      searchbarStyle,
+      searchbarContainerStyle,
+      categoryButtonStyle,
+      categoryTextStyle,
+      placeholderTextColor,
       ...other
     } = this.props;
 
@@ -290,7 +299,7 @@ export default class EmojiSelector extends Component {
     const Searchbar = (
       <View style={styles.searchbar_container}>
         <TextInput
-          style={styles.search}
+          style={{...styles.search, ...searchbarStyle}}
           placeholder={placeholder}
           clearButtonMode="always"
           returnKeyType="done"
@@ -310,9 +319,12 @@ export default class EmojiSelector extends Component {
           {showTabs && (
             <TabBar
               activeCategory={category}
+              showHistory={showHistory}
               onPress={this.handleTabSelect}
               theme={theme}
               width={this.state.width}
+              categoryButtonStyle={categoryButtonStyle}
+              categoryTextStyle={categoryTextStyle}
             />
           )}
         </View>
@@ -384,14 +396,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.75)"
   },
   search: {
-    ...Platform.select({
-      ios: {
-        height: 36,
-        paddingLeft: 8,
-        borderRadius: 10,
-        backgroundColor: "#E5E8E9"
-      }
-    }),
+    height: 36,
+    paddingLeft: 8,
+    borderRadius: 17,
+    backgroundColor: "#E5E8E9",
     margin: 8
   },
   container: {
