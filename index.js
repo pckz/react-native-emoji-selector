@@ -345,7 +345,6 @@ export default class EmojiSelector extends Component {
                   numColumns={columns}
                   keyboardShouldPersistTaps={"always"}
                   ref={scrollview => (this.scrollview = scrollview)}
-                  removeClippedSubviews
                 />
               </View>
             </View>
