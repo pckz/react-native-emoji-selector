@@ -123,7 +123,7 @@ const EmojiCell = ({ emoji, colSize, ...other }) => (
   </TouchableOpacity>
 );
 
-const storage_key = "@emmanuel-D/react-native-emoji-selector:HISTORY";
+const storage_key = "@pckz/react-native-emoji-selector:HISTORY";
 export default class EmojiSelector extends Component {
   state = {
     searchQuery: "",

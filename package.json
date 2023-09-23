@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmanuel-D/react-native-emoji-selector.git"
+    "url": "git+https://github.com/pckz/react-native-emoji-selector.git"
   },
   "bugs": {
-    "url": "https://github.com/emmanuel-D/react-native-emoji-selector/issues"
+    "url": "https://github.com/pckz/react-native-emoji-selector/issues"
   },
-  "homepage": "https://github.com/emmanuel-D/react-native-emoji-selector#readme",
+  "homepage": "https://github.com/pckz/react-native-emoji-selector#readme",
   "directories": {
     "example": "example"
   },

@@ -67,6 +67,7 @@ categoryButtonStyle  | _StyleProp\<ViewStyle>_ | | Styles for each Emoji-Categor
 
 Special thanks to everyone who has contributed to this project!
 
+[![Pedro Ojeda](https://avatars.githubusercontent.com/u/1050628?v=4)](https://github.com/pckz)
 [![Emmanuel Dadem](https://avatars.githubusercontent.com/u/37305687?s=80&v=4)](https://github.com/emmanuel-D)
 [![Victor K Varghese](https://avatars3.githubusercontent.com/u/15869386?s=80&v=4)](https://github.com/victorkvarghese)
 [![Kubo](https://avatars3.githubusercontent.com/u/22464192?s=80&v=4)](https://github.com/ma96o)
