@@ -7,11 +7,11 @@ A fully customizable Emoji-Selector 🤩 for React Native ⚛️ forked from [re
 ## Installation
 
 ```
-npm install --save @manu_omg/react-native-emoji-selector
+npm install --save @pckz/react-native-emoji-selector
 ```
 
 ```
-import EmojiSelector from '@manu_omg/react-native-emoji-selector'
+import EmojiSelector from '@pckz/react-native-emoji-selector'
 ```
 
 ## Demo
